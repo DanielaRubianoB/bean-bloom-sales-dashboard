@@ -3,7 +3,7 @@
 Tools Used: Excel <br>
 Project Type: Exploratory Data Analysis (EDA), Dashboard Development
 
-### Project Background
+## Project Background
 Bean & Bloom, founded in 2016, is a specialty coffee retailer that offers ethically sourced beans and customizable roast subscriptions. Operating across North America and parts of Europe, the company sells popular coffee varieties through its online store and local distributors. <br>
 
 The company has collected a large volume of data on sales performance, product preferences, regional demand, and loyalty program usage. I’m partnering with the Sales & Marketing Analytics Team to analyze the data and uncover actionable insights and improve Bean & Bloom’s commercial strategy. <br>
