@@ -1,23 +1,27 @@
-# ☕ Bean & Bloom Sales Dashboard
+# Nuvora Group. Inc vendor performance Analysis
 
-Tools Used: Excel <br>
-Project Type: Exploratory Data Analysis (EDA), Dashboard Development
+Tools Used: SQL, python, tableau <br>
+Project Type: end-to-end project
 
 ## Project Background
-Bean & Bloom, founded in 2016, is a specialty coffee retailer that offers ethically sourced beans and customizable roast subscriptions. Operating across North America and parts of Europe, the company sells popular coffee varieties through its online store and local distributors. <br>
+Nuvora Group, Inc. is a multi-brand holding company operating across the beverage distribution and retail industry in North America. Since its founding in 2003, Nuvora has grown through strategic acquisitions and partnerships, enabling its subsidiaries to serve thousands of retail and wholesale clients. <br>
 
-The company has collected a large volume of data on sales performance, product preferences, regional demand, and loyalty program usage. I’m partnering with the Sales & Marketing Analytics Team to analyze the data and uncover actionable insights and improve Bean & Bloom’s commercial strategy. <br>
+The company has gathered comprehensive data on transactions, product categories, vendor performance, purchase behaviors, and profitability metrics of the last year. This project was developed in collaboration with the business strategy and procurement teams to clean, analyze, and visualize the data using SQL, Python, and Tableau.  <br>
 
 Insights and recommendations are provided on the following key areas:
-- Sales Trends Analysis: Evaluation of historical sales data over time by coffee type, identifying seasonal trends and performance spikes.
-- Top Customer Analysis: Identification of the highest-value customers to tailor retention strategies and personalized marketing.
-- Product Category Performance: Comparative analysis of roast types and package sizes to understand sales drivers and product popularity.
-- Loyalty Program Impact: Assessment of how the loyalty card program influences purchasing behavior and customer lifetime value.
-- Regional Sales Distribution: Geographic breakdown of total revenue, helping prioritize marketing and distribution efforts by country.
+- Brand Performance: Identify underperforming brands that require promotional or pricing adjustments.
+- Sales: Determine top vendors contributing to sales and gross profit.
+- Purchasing Strategy: Analyze the impact of bulk purchasing on unit costs.
+- Inventory Management: Assess inventory turnover to reduce holding costs and improve efficiency.
+- Profitability Analysis: Investigate the profitability variance between high-performing and low-performing vendors.
 
 ## Relevant Resources
-- The raw dataset used for analysis can be accessed [here](https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/Raw_coffeeOrdersData.xlsx). <br>
-- The final cleaned dataset and Excel dashboard can be downloaded [here](https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/BeanBloom_Dashboard.xlsx). <br>
+- The raw dataset used for analysis can be accessed [here](https://drive.google.com/drive/folders/135tgUOCXse7rB9N2nH6Rwpfv3wus63-_?usp=drive_link). <br>
+- The SQL script for data extraction and visualization is available [here](https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/ingestion_db.py). <br>
+- The SQL script for data cleaning is available [here](https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/get_vendor_summary.py). <br>
+- The Python script used for data analysis can be accessed [here](https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/Vendor_performance_analysis.ipynb). <br>
+- The final cleaned dataset used for analysis can be accessed [here](https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/vendor_sales_summary.csv). <br>
+- The final Tableau dashboard can be viewed [here](https://public.tableau.com/views/dashboard_17501638543320/Dashboard1?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). <br>
 - A presentation slide deck prepared for stakeholders can be viewed here. <br>
 
 ## Data structure and initial checks
@@ -30,75 +34,102 @@ Prior to beginning the analysis, a variety of checks were conducted for quality 
 No cleaning was required. Instead, a set of stakeholder-aligned questions was developed to clarify assumptions and define the scope. After aligning on these needs, calculated fields and aggregations were introduced to support further analysis. These can be reviewed here.
 
 ## Executive summary
-From 2019 to 2022, Bean & Bloom showed steady growth, with monthly revenue peaking at $856 in February 2021 and dipping to a low of $38 in October 2020, reflecting strong seasonality in performance. Arabica led product-level revenue, outperforming other roasts by 25–40% on average. Loyalty members generated 30% more orders and had an average revenue per user (ARPU) $58 higher than non-members. Regionally, the U.S. accounted for $35,639 (85%+) in total revenue. Key opportunities for growth and optimization will be addressed in the following sections. <br> 
+Nuvora Group, Inc. conducted a year-long (2024) analysis of vendor and brand performance across its retail network. Top 10 vendors contributed 65.69% of purchases, raising concentration risks. Diageo led in volume, while 198 brands showed high margins but low sales. Bulk buying cut unit costs by 72%, and $2.71M in unsold inventory highlighted cash flow inefficiencies. Statistical tests confirmed margin differences between vendor groups. Profitability was found to depend more on pricing and volume strategy than on unit cost or turnover. Key opportunities for growth and optimization are outlined in the sections that follow. <br> 
 
-Below is the overview page of the dashboard, and the full interactive version can be downloaded [here](https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/BeanBloom_Dashboard.xlsx).
+Below is the overview page of the dashboard, and the full  version can be viewed [here](https://public.tableau.com/views/dashboard_17501638543320/Dashboard1?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link). <br>
 
-![Dashboard Preview](https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/images/Dashboard.png)
+![Dashboard Preview](https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/Dasboard.png)
 
 ## Insights Deep-Dive 
-### Sales Trends
-- In February 2021, sales reached their peak at $856, driven by seasonal promotions and post-holiday buying behavior. Another spike occurred in November 2021 at $847, likely tied to holiday demand.
-- The lowest sales occurred in October 2020, with revenue dropping to just $38, indicating a gap in marketing or engagement during that period.
-- Over the three-year span, total annual revenue increased by approximately 20%, reflecting long-term growth despite month-to-month variability.
-- Arabica consistently led in sales, often outperforming other roasts by 25–40%, affirming its position as the company’s most popular product.
+### Brand Performance
+- 198 brands show high margins but low sales, indicating missed revenue opportunities. These are strong candidates for marketing, bundling, or pricing strategies to boost volume without hurting profitability.
 
 <p align="center">
-  <img src="https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/images/SalesTrends.png" alt="Preview" />
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/brandslowsaleshighprofit.png" alt="Preview" />
 </p>
 
-### Top Customers
-- The top customer, Allis Wilmore, spent $317, and the top 5 customers together contributed $1,473, making up more than 10% of total revenue.
-- Three of the top 5 customers made purchases across at least four different months, showing strong engagement and repeat behavior.
-- While ranked fifth, Don Flintiff placed frequent mid-value orders, showing loyalty through consistency rather than large single transactions.
+### Sales & Vendor Contribution
+- The top 10 vendors account for 65.69% of purchases, revealing potential over-reliance. This concentration poses supply chain and pricing risks, making vendor diversification a recommended strategy.
 
 <p align="center">
-  <img src="https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/images/Customers.png" alt="Preview" />
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/donut.png" alt="Preview" />
 </p>
 
-### Product Category Performance
-- Arabica peaked at $842 and maintained a leading position across most months, showing strong customer preference and product-market fit.
-- Excelsa ranked second with reliable performance and periodic spikes, reinforcing its role as a strong secondary offering.
-- Robusta frequently generated under $100/month, while Liberica spiked to $859 in November 2021, suggesting that lower-performing blends can still be boosted through targeted promotions.
-### Loyalty Program Impact
-- Loyalty card holders placed 30% more orders than non-members, showing higher engagement and purchase frequency.
-- Their average spend was $58 greater, highlighting the program’s effectiveness in increasing customer value.
-- With only 38% of customers enrolled, there is significant potential to expand the program and unlock more revenue through wider adoption.
-### Regional Sales Distribution
-- The United States led with $35,639 in sales, accounting for over 85% of total revenue and reflecting a mature, well-established market presence.
-- In comparison, Ireland and the UK generated $6,697 and $2,799, respectively—highlighting underutilized growth opportunities.
-- The 5x revenue gap between the US and other markets underscores the need to expand product visibility and marketing in international regions.
+- The Pareto chart shows that Diageo North America Inc leads with 16.3% of purchases, and the top 10 vendors collectively contribute 65.69%. Most remaining vendors contribute under 5% each, forming a long tail with limited individual impact.
 
 <p align="center">
-  <img src="https://github.com/DanielaRubianoB/bean-bloom-sales-dashboard/blob/main/images/Country.png" alt="Preview" />
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/pareto.png" alt="Preview" />
 </p>
+
+### Purchasing Strategy
+- Vendors placing large orders paid 72% less per unit on average ($10.78 vs. $39.07), highlighting the cost-efficiency of bulk purchasing and supporting volume-based procurement strategies to optimize margins.
+
+<p align="center">
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/bulksize.png" alt="Preview" />
+</p>
+
+- Unsold inventory amounts to $2.71M, with Diageo North America Inc responsible for $722K. Reducing this stagnant stock can lower storage costs and enhance cash flow and profitability.
+
+<p align="center">
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/unsoldinventory.png" alt="Preview" />
+</p>
+
+- Stock turnover ranged from 0 to 274.5, with several vendors below 1.0, indicating slow-moving or excess inventory. Turnover above 1 may reflect sell-through of older stock, potentially hiding stock management inefficiencies.
+
+<p align="center">
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/stockturnover.png" alt="Preview" />
+</p>
+
+
+### Profitability Analysis
+- Top vendors average a 31.17% profit margin, while low-performing vendors reach 41.55%. The histogram confirms this difference is statistically significant, suggesting that higher margins among low performers may reflect pricing or visibility issues limiting sales.
+
+<p align="center">
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/histogram.png" alt="Preview" />
+</p>
+
+- Correlation analysis showed strong alignment between purchases and sales, but weak links between profitability and factors like purchase price or stock turnover. This suggests that profitability depends more on pricing strategy, volume mix, and cost control than on unit cost or inventory speed alone.
+
+<p align="center">
+  <img src="https://github.com/DanielaRubianoB/nuvora-vendor-performance-analysis/blob/main/images/correlation.png" alt="Preview" />
+</p>
+
+### Statistical Analysis
+- Statistical testing (p-value from t-test) confirmed a significant difference in profit margins, indicating that high-margin and high-volume vendors follow distinct profitability models.
+- Purchase price showed a weak negative correlation with both sales and profit (–0.012, –0.016), suggesting unit cost alone doesn’t drive profitability and highlighting the need for broader pricing strategy reviews.
+- Total purchase quantity and total sales quantity show a strong correlation (0.999), confirming efficient inventory turnover and indicating that backend processes are working well for most SKUs.
+- Profit margin and total sales price show a negative correlation (–0.179), suggesting that raising prices may reduce margins due to lower volume, emphasizing the need to balance pricing with demand.
+- Stock turnover shows a weak negative correlation with profitability (–0.038, –0.055), indicating that faster inventory movement doesn’t guarantee better margins and highlighting the need to prioritize margin optimization.
+
 
 ## Recommendations & Opportunities
-- Capitalize on Seasonal Highs: Run targeted promotions during Q1 (February) and Q4 (November), where historical data shows peak revenue. Use bundles, discounts, and loyalty boosts to drive engagement during these periods.
-- Reward High-Value Customers: Introduce VIP perks for top spenders and frequent buyers, such as early access to new products or exclusive discounts. Consider a tiered loyalty system to nurture both high spend and frequent purchase behaviors.
-- Prioritize Best-Selling Products: Focus marketing and inventory planning around Arabica and Excelsa, the top-performing coffee types. Feature them in featured product sections, paid ads, and curated bundles.
-- Reposition Underperforming Roasts: Reevaluate the role of Robusta and Liberica in the product line. Explore limited-edition releases, flavor rebranding, or bundled promos to reignite interest or phase them out.
-- Increase Loyalty Program Adoption: Boost visibility of the loyalty program at checkout with clear benefits like “Earn free shipping” or “Unlock exclusive deals.” Use post-purchase emails to encourage sign-up among non-members.
-- Grow International Markets: Expand brand presence in Ireland and the UK by increasing localized campaigns, offering free regional shipping thresholds, or running limited-time offers tailored to those markets.
-- Enhance Performance Tracking: Extend the dashboard to include cost, profit margins, and marketing ROI. Create a recurring monthly insights tracker to monitor KPIs like revenue, repeat rate, and loyalty conversion.
+- Re-evaluate pricing for low-sales, high-margin brands: Identify and adjust pricing strategies for 198 brands with strong profit margins but low sales volume to boost revenue without compromising profitability.
+- Diversify vendor partnerships: Reduce dependency on top vendors (currently contributing 65.69% of total purchases) by onboarding alternative suppliers to improve supply chain resilience and mitigate risk.
+- Leverage bulk purchasing efficiency: Utilize bulk order strategies that lower unit purchase prices by up to 72%, particularly for high-demand or consistently sold products to optimize cost structures.
+- Optimize slow-moving inventory: Reassess purchase quantities, initiate clearance sales, or repurpose stagnant stock to recover capital tied up in over $2.71M of unsold inventory.
+- Improve vendor evaluation metrics: Move beyond sales volume by integrating profit margin and inventory turnover into vendor assessments. Prioritize support for high-margin vendors struggling with sales volume.
+- Streamline product portfolio: Eliminate persistently low-performing products and reallocate resources toward SKUs with stronger margin-to-sales efficiency.
+- Align promotional strategies with data insights: Use dashboard results to identify high-potential products and vendors for future campaigns, ensuring marketing efforts align with profitability drivers.
+- Enhance inventory planning with data-driven monitoring: Extend reporting tools to continuously track KPIs like stock turnover, gross profit, and margin variance across vendors and categories.
 
 ## Key Questions for Stakeholders Prior to Project Advancement
 These are some questions I asked stakeholders/project leads early on to better understand business goals, clarify assumptions, and ensure data interpretation aligned with operational context:
-- How is a “top customer” internally defined? By total spend, purchase frequency, or lifetime value?
-- Are there known promotional periods or marketing campaigns that could explain sales spikes?
-- Should performance across coffee types be evaluated equally, or are certain roasts considered flagship products?
-- How important is the loyalty program to the company’s strategy? should it be analyzed as a primary growth lever?
-- Regional sales should be analyzed at the country level or city-level segmentation?
+- Some products report negative gross profit and margins. Are these pricing errors, returns, or edge cases such as promotional loss leaders?
+- Freight cost ranges from $0.09 to over $250,000. Should extremely high values be considered valid bulk shipments or flagged for possible entry errors?
+- Unit prices range from under $1 to over $7,000. Are these valid premium items or signs of misclassification or currency entry mistakes?
+- Stock turnover values exceed 250 for some items. Are these true fast-movers, system-generated anomalies, or the result of historical inventory adjustments?
+- Should we apply manual overrides or business rules to clean outliers, or retain them to reflect raw operational data?
 - Is this dashboard meant for one-time strategic use, or will it support ongoing performance tracking and reporting?
+
 
 ## Assumptions and Caveats
 The following assumptions and limitations were made during the course of this project due to gaps in context, incomplete metadata, or missing documentation:
-- It is assumed that all transaction records in the dataset reflect completed and paid orders, with no cancellations or returns unless explicitly stated.
-- Customer names were used as unique identifiers; duplicates were assumed to reflect repeat purchases rather than different individuals with similar names.
-- Loyalty card status was treated as binary (Yes/No), with no further distinction between levels or benefits, as that data was not provided.
-- Regional sales were analyzed at the country level (U.S., Ireland, U.K.) without detailed city-level segmentation, as specified by the Stakeholder.
-- Sales dips and spikes were interpreted based on observed time patterns and typical seasonal behavior.
-- The dataset does not include cost data, so profitability and margin analysis were not part of this scope.
+- Data was filtered to exclude entries with gross profit ≤ 0, profit margin ≤ 0, and sales quantity = 0, assuming these reflect errors or exceptions, and to focus the analysis on active, profitable transactions.
+- All prices and costs were assumed accurate despite some extreme outliers, which were included in the analysis unless clearly erroneous.
+- Turnover values above 1 were interpreted as sell-through from existing stock, indicating inventory movement even without current-year purchases.
+- Vendor-brand relationships were assumed to remain static throughout the analysis period; changes in ownership or supply chains were not accounted for.
+- Unit prices were assumed to be static, as the analysis did not account for discounts or pricing changes over time due to missing timestamped pricing data.
+- Profit margin calculations assume consistent cost attribution; variability in indirect costs, freight, or discounts may cause margin distortion not reflected in this analysis.
 
 
 
